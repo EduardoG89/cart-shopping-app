@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 
 
 function CardShopping() {
@@ -20,10 +19,10 @@ function CardShopping() {
 
         products.length > 0 ? (
 
-            products.slice(0, 50).map(product =>
+            products.slice(0, 20).map(product =>
 
                 <li key={product.id}>
-                    <div className="max-w-56 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mt-5 ml-5">
+                    <div className="max-w-64 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800  dark:border-gray-700 mt-5">
                         <a href="#">
                             <img className="rounded-t-lg" src={product.images?.[0]} alt={product.title} />
                         </a>
@@ -45,10 +44,9 @@ function CardShopping() {
                     </div>
                 </li>
             )
-
         )
-        :
-        (
+            :
+            (
                 <div role="status" className="flex flex-col items-center col-span-4 ">
                     <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
@@ -56,12 +54,12 @@ function CardShopping() {
                     </svg>
                     <span className="sr-only">Cargando...</span>
                 </div>
-        );
+            );
 
 
 
     return (
-        <ul className="grid w- gap-6 md:grid-cols-4">
+        <ul className="grid justify-items-center md:grid-cols-4 mt-20">
             {listProducts}
         </ul>
     );
