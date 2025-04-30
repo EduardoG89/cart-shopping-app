@@ -6,7 +6,7 @@ function CardShopping() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://api.escuelajs.co/api/v1/products")
+        fetch("https://fakestoreapi.com/products")
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data);
@@ -19,12 +19,12 @@ function CardShopping() {
 
         products.length > 0 ? (
 
-            products.slice(0, 20).map(product =>
+            products.map(product =>
 
                 <li key={product.id}>
                     <div className="max-w-64 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800  dark:border-gray-700 mt-5">
                         <a href="#">
-                            <img className="rounded-t-lg" src={product.images?.[0]} alt={product.title} />
+                            <img className="rounded-t-lg" src={product.image} alt={product.title} />
                         </a>
                         <div className="p-5">
                             <a href="#">
